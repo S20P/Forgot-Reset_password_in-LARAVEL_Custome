@@ -29,8 +29,8 @@ class AdminController extends Controller
 
             if ($user) {
                 $token = str_random(64);
-
-                $mail = Mail::send('ResetPasswod.emails.SendReserPasswordLink', ['actionUrl' => $token, 'email' => $email], function (Message $message) use ($user) {
+                $user_name = $user->first_name." ".$user->last_name;
+                $mail = Mail::send('ResetPasswod.emails.SendReserPasswordLink', ['actionUrl' => $token, 'email' => $email,"user_name"=>$user_name], function (Message $message) use ($user) {
                     $message->subject(config('app.name') . ' Password Reset Link');
                     $message->to($user->email);
                 });
