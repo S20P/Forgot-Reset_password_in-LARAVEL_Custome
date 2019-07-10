@@ -69,7 +69,7 @@
                        </div>
 
                 <div class="form-group has-feedback">
-                    <input type="password" class="form-control" placeholder="Password" name="confirm_password"/>
+                    <input type="password" class="form-control" placeholder="confirm password" name="confirm_password"/>
                     </div>
 
                 <div class="row">
